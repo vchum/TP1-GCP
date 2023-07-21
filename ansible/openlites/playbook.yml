@@ -1,0 +1,18 @@
+---
+- hosts: mysql
+  strategy: linear
+  become: true
+  roles:
+  - { role: mysql, become: yes }
+  vars_files:
+    - vars/default.yml
+
+- hosts: wordpress
+  strategy: linear
+  become: true
+  roles:
+  - { role: openlitespeed, become: yes }
+  - { role: php, become: yes }
+  - { role: wordpress, become: yes }
+  vars_files:
+    - vars/default.yml

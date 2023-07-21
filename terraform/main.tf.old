@@ -1,0 +1,59 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "4.51.0"
+    }
+  }
+}
+
+provider "google" {
+  credentials = file("~/Documents/tp/gcp/wordpress/service_account.json")
+
+  project = "quiet-vector-393409"
+  region  = "europe-west9"
+  zone    = "europe-west9-a"
+}
+
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+
+resource "google_compute_instance" "vm_instance1" {
+  name         = "wordpress"
+  machine_type = "e2-micro"
+
+  boot_disk {
+    initialize_params {
+      #project/family
+      image = "ubuntu-os-cloud/ubuntu-2004-lts"
+    }
+  }
+
+  network_interface {
+    network = google_compute_network.vpc_network.name
+    access_config {
+    }
+  }
+}
+
+resource "google_compute_instance" "vm_instance2" {
+  name         = "mysql"
+  machine_type = "e2-micro"
+
+  boot_disk {
+    initialize_params {
+      image = "ubuntu-os-cloud/ubuntu-2004-lts"
+    }
+  }
+
+  network_interface {
+    network = google_compute_network.vpc_network.name
+    access_config {
+    }
+  }
+}
+
+
+
+

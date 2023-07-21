@@ -1,0 +1,20 @@
+plugin: gcp_compute
+zones: # populate inventory with instances in these regions
+  - europe-west9-a
+projects: #id_project from GCP
+  - quiet-vector-393409
+service_account_file: ~/Documents/tp/gcp/wordpress/service_account.json
+auth_kind: serviceaccount
+keyed_groups:
+  # Create groups from GCE labels
+  - key: labels
+    prefix: label
+  - key: zone
+    prefix: zone
+hostnames:
+  - name
+compose:
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP
+
+
+

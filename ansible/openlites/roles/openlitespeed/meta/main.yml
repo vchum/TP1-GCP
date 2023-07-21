@@ -1,0 +1,17 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Cold-Egg
+  description: OpenLiteSpeed Web Server
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - openlitespeed
+    - web server
+    - http
+    - https

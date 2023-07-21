@@ -1,0 +1,36 @@
+{
+ "collection_info": {
+  "namespace": "code_egg",
+  "name": "openlitespeed_wordpress",
+  "version": "1.1.1",
+  "authors": [
+   "Cold Egg"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "wordpress",
+   "openlitespeed",
+   "php",
+   "sql",
+   "lscache"
+  ],
+  "description": "A quick setup performing wordpress site method",
+  "license": [
+   "MIT"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/Code-Egg/collection",
+  "documentation": "https://github.com/Code-Egg/collection/blob/master/openlitespeed_wordpress/README.md",
+  "homepage": "https://galaxy.ansible.com/code_egg/openlitespeed_wordpress",
+  "issues": "https://github.com/Code-Egg/collection/issues"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "c96205aa7bb8512343b28f0b3c5c11f4758923e42166eacae622a8e7084a6413",
+  "format": 1
+ },
+ "format": 1
+}

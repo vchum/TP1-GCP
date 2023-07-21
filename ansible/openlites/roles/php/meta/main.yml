@@ -1,0 +1,16 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Cold-Egg
+  description: LSPHP
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - php
+    - lsphp
+    - openlitespeed
