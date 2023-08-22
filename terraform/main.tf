@@ -8,12 +8,12 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("~/Documents/tp/gcp/wordpress/service_account.json")
+  credentials = file("../service_account.json")
 }
 
 module "gcp_wordpress_mysql" {
   source                  = "./gcp-wordpress-mysql"
-  credentials_file_path   = "~/Documents/tp/gcp/wordpress/service_account.json"
+  credentials_file_path   = "../service_account.json"
   project_id              = "quiet-vector-393409"
   region                  = "europe-west9"
   zone                    = "europe-west9-a"

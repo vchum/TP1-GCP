@@ -73,9 +73,25 @@
 - name: Create MySQL user for WordPress
   mysql_user:
     name: "{{ mysql_user }}"
+    host: "%"
     password: "{{ mysql_password }}"
     priv: "{{ mysql_db }}.*:ALL"
     state: present
     login_user: root
     login_password: "{{ mysql_root_password }}"
   tags: [ mysql ]
+
+- name: Allow MySQL port
+  ufw:
+    rule: allow
+    port: 3306
+    proto: tcp
+
+- name: Update bind-address in mysqld.cnf
+  lineinfile:
+    path: /etc/mysql/mysql.conf.d/mysqld.cnf
+    regexp: '^bind-address\s*='
+    line: 'bind-address = 0.0.0.0'
+  notify:
+    - Restart mysql
+

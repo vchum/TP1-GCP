@@ -7,6 +7,12 @@
   vars_files:
     - vars/default.yml
 
+  handlers:
+    - name: Restart mysql
+      service:
+        name: mysql
+        state: restarted  
+
 - hosts: wordpress
   strategy: linear
   become: true
@@ -16,3 +22,5 @@
   - { role: wordpress, become: yes }
   vars_files:
     - vars/default.yml
+
+ 

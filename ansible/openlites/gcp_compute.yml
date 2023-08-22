@@ -3,7 +3,7 @@ zones: # populate inventory with instances in these regions
   - europe-west9-a
 projects: #id_project from GCP
   - quiet-vector-393409
-service_account_file: ~/Documents/tp/gcp/wordpress/service_account.json
+service_account_file: ../../service_account.json
 auth_kind: serviceaccount
 keyed_groups:
   # Create groups from GCE labels
