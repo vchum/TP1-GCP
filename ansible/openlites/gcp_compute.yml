@@ -1,8 +1,8 @@
 plugin: gcp_compute
 zones: # populate inventory with instances in these regions
-  - europe-west9-a
+  - {TA_ZONE}
 projects: #id_project from GCP
-  - quiet-vector-393409
+  - {TA_PROJECT}
 service_account_file: ../../service_account.json
 auth_kind: serviceaccount
 keyed_groups:

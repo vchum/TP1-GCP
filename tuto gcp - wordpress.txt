@@ -46,3 +46,11 @@ ouverture du port 22 sur le VPC
 
 ansible all -m ping
 
+ENV :
+
+TA_ZONE="europe-west9-a"
+TA_PROJECT="quiet-vector-393409"
+
+ajouter sa clé ssh à gcp : 
+gcloud compute os-login ssh-keys add --key-file=id_rsa.pub
+
