@@ -7,10 +7,6 @@ terraform {
   }
 }
 
-provider "google" {
-  credentials = file("../service_account.json")
-}
-
 module "gcp_wordpress_mysql" {
   source                  = "./gcp-wordpress-mysql"
   credentials_file_path   = "../service_account.json"
