@@ -6,12 +6,20 @@
 ## Les pré-requis :
 
  - OS Linux Debian ou Ubuntu
+ - 1 compte GCP
+ - 1 projet GCP
  - Clé ssh
  - gcloud CLI
- - compte GCP
- - projet GCP
+ - clé de compte de service GCP   
  - Terraform
  - Ansible
+
+**Le script permet d'installation Terraform et Ansible si ils sont manquants.**
+
+## Lancement du script : 
+
+1) Placer votre clé de compte de service GCP à la racine du projet.
+2) Lancer le script bash : ./start.sh
 
 ## GCP Modules obligatoire à activer :
 
@@ -30,7 +38,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 sudo apt-get update && sudo apt-get install google-cloud-cli
 
 
-## Comment obtenir une clé de service pour le projet :
+## Comment obtenir la clé de compte de service :
 
 Lien vers Google Cloud Console : https://console.cloud.google.com/
 
