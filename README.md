@@ -6,12 +6,20 @@
 ## Les pré-requis :
 
  - OS Linux Debian ou Ubuntu
+ - 1 compte GCP
+ - 1 projet GCP
  - Clé ssh
  - gcloud CLI
- - compte GCP
- - projet GCP
+ - clé de compte de service GCP   
  - Terraform
  - Ansible
+
+**Le script permet d'installer Terraform et Ansible si ils sont manquants.**
+
+## Lancement du script : 
+
+1) Placer votre clé de compte de service GCP à la racine du projet.
+2) Lancer le script bash : ./deployment.sh
 
 ## GCP Modules obligatoire à activer :
 
@@ -19,18 +27,18 @@
 
 ## Procédure pour installer gcloud CLI sur Debian/Ubuntu :
 
-sudo apt-get update
+- sudo apt-get update
 
-sudo apt-get install apt-transport-https ca-certificates gnupg curl sudo
+- sudo apt-get install apt-transport-https ca-certificates gnupg curl sudo
 
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+- echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+- curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
-sudo apt-get update && sudo apt-get install google-cloud-cli
+- sudo apt-get update && sudo apt-get install google-cloud-cli
 
 
-## Comment obtenir une clé de service pour le projet :
+## Comment obtenir la clé de compte de service :
 
 Lien vers Google Cloud Console : https://console.cloud.google.com/
 
@@ -46,16 +54,16 @@ Lien vers Google Cloud Console : https://console.cloud.google.com/
 
 ##### Créer la clé de service :
 
-1) Cliquer sur le compte qu'on vient de créer, et sur l'onglet "Clés"
-2) Cliquer sur "Ajouter une clé" / Créer une clé
-3) Selectionner le type en "json" et cliquer sur créer
-4) Sauvegarder la clé dans la racine du projet
-5) renommer la clé en : "service_account.json"
+1) Cliquer sur le compte qu'on vient de créer, et sur l'onglet "Clés".
+2) Cliquer sur "Ajouter une clé" / Créer une clé.
+3) Selectionner le type en "json" et cliquer sur créer.
+4) Sauvegarder la clé dans la racine du projet.
+5) renommer la clé en : "service_account.json".
 
 ## Configuration de gcloud CLI:
 
 ### Affectation du projet GCP : 
-gcloud config set project <nom_projet>
+- gcloud config set project <nom_projet>
 
 ### Ajouter sa clé rsa public dans GCP :
 1) Aller dans le dossier où est situé votre clé rsa public.
