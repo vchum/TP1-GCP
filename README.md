@@ -14,7 +14,7 @@
  - Terraform
  - Ansible
 
-**Le script permet d'installation Terraform et Ansible si ils sont manquants.**
+**Le script permet d'installer Terraform et Ansible si ils sont manquants.**
 
 ## Lancement du script : 
 
