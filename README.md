@@ -143,3 +143,10 @@ gcloud compute config-ssh --ssh-key-file=id_rsa
 ## Le schéma de présentation du déploiement :
 <img width="856" alt="Capture d'écran 2023-08-24 111655" src="https://github.com/vchum/tp1-gcp/assets/25177163/8dfcd687-ec4b-47c3-bace-76ffe673e8ef">
 
+## Source :
+```
+https://www.terraform.io/
+https://docs.ansible.com/
+https://cloud.google.com/docs/?hl=fr)https://cloud.google.com/docs/?hl=fr
+https://galaxy.ansible.com/code_egg/openlitespeed_wordpress
+```
